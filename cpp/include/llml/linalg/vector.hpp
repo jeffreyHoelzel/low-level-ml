@@ -19,6 +19,13 @@ class Vector {
     double &operator[](std::size_t index);
     double operator[](std::size_t index) const;
 
+    Vector operator+(const Vector &other) const;
+    Vector operator-(const Vector &other) const;
+    Vector operator*(double scalar) const;
+    Vector operator/(double scalar) const;
+
+    double dot(const Vector &other) const;
+
   private:
     std::vector<double> data_;
 };

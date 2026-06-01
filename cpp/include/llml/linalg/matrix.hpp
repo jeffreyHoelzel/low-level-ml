@@ -4,6 +4,8 @@
 #include <initializer_list>
 #include <vector>
 
+#include <llml/linalg/vector.hpp>
+
 namespace llml::linalg {
 
 class Matrix {
@@ -20,6 +22,16 @@ class Matrix {
 
     double &operator()(std::size_t row, std::size_t col);
     double operator()(std::size_t row, std::size_t col) const;
+
+    Matrix operator+(const Matrix &other) const;
+    Matrix operator-(const Matrix &other) const;
+    Matrix operator*(double scalar) const;
+    Matrix operator/(double scalar) const;
+
+    Vector operator*(const Vector &vector) const;
+    Matrix operator*(const Matrix &matrix) const;
+
+    Matrix transpose() const;
 
   private:
     std::size_t rows_{0};

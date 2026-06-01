@@ -15,5 +15,16 @@ int main() {
     assert(matrix(1, 0) == 4.0);
     assert(matrix(1, 2) == 6.0);
 
+    const llml::linalg::Matrix a{{1.0, 2.0}, {3.0, 4.0}};
+
+    const llml::linalg::Matrix b{{5.0, 6.0}, {7.0, 8.0}};
+
+    const auto result = a * b;
+
+    assert(result(0, 0) == 19.0);
+    assert(result(0, 1) == 22.0);
+    assert(result(1, 0) == 43.0);
+    assert(result(1, 1) == 50.0);
+
     return 0;
 }
